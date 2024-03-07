@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lily & Co</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your existing CSS styles */
+        body {
+            background-color: #eceada; /* Default background color */
+            transition: background-color 0.5s ease; /* Smooth transition effect */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Define styles for the sections */
+        .section {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+
+        /* Define different background colors */
+        .bg-color1 {
+            background-color: #eceada;
+        }
+
+        .bg-color2 {
+            background-color: #fff; /* Change to your desired background color */
+        }
+
+        .bg-color3 {
+            background-color: #f0f0f0; /* Change to your desired background color */
+        }
+    </style>
+</head>
+<body>
+    <div class="section bg-color1">Section 1</div>
+    <div class="section bg-color2">Section 2</div>
+    <div class="section bg-color3">Section 3</div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var section1 = document.querySelector('.section.bg-color1');
+            var section2 = document.querySelector('.section.bg-color2');
+            var section3 = document.querySelector('.section.bg-color3');
+
+            // Change background color based on scroll position
+            if (currentScroll < section2.offsetTop) {
+                document.body.style.backgroundColor = section1.style.backgroundColor;
+            } else if (currentScroll < section3.offsetTop) {
+                document.body.style.backgroundColor = section2.style.backgroundColor;
+            } else {
+                document.body.style.backgroundColor = section3.style.backgroundColor;
+            }
+        });
+    </script>
+</body>
+</html>

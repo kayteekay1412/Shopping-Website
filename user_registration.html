@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content=width=device-width, initial-scale=1.0">
+	<title>User Registration</title>
+	<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+    }
+/* NAVIGATION */
+
+        nav {
+            position: fixed; /* Fix the navigation bar */
+            width: 100%; /* Full width */
+            top: 0; /* Position at the top */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333; /* Change the background color as needed */
+            margin-top: -10px;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #111;
+        }
+
+        /* BRAND NAME */
+
+        .brand-name {
+            font-family: "Arial", sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-align: left;
+            margin-top: 50px; /* Adjusted margin */
+            margin-bottom: -10px;
+            margin-left: 20px;
+        }
+
+        .section-break {
+            border-top: 2px solid #333;
+            margin-top: 20px;
+        }
+</style>
+
+</head>
+<body>
+<nav>
+        <ul>
+            <li><a href="final.html">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#cart">Cart</a></li>
+            <li><a href="user_registration.html">Register</a></li>
+            <li><a href="#checkout">Checkout</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="brand-name">Lily & Co</div>
+        <div class="section-break"></div>
+    </header>
+<div class="container">
+  <div class="form-box">
+ 
+    <h1 id="title">REGISTER</h1>
+   <form>
+      <div class="input-group">
+         <div class="input-field">
+           <i class="fa-solid fa-user"></i>
+           <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field" id="nameField">
+           <i class="fa-solid fa-name"></i>
+           <input type="text" placeholder="Email">
+        </div>
+         <div class="input-field">
+           <i class="fa-solid fa-envelope"></i>
+           <input type="password" placeholder="Password">
+          		
+          </div>
+         <div class="btn-field">
+            <button type="button" id="signupBtn">Register</button>
+            <button type="button" id="signinBtn" class="disable">Sign In</button>
+         </div>
+      </form>
+   </div>
+</div>
+<script>
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+signinBtn.onclick = function(){
+   nameField.style.maxHeight = "0";
+   title.innerHTML = "Sign In";
+   signupBtn.classList.add("disable");
+   signinBtn.classList.remove("disable");
+}
+
+
+signupBtn.onclick = function(){
+   nameField.style.maxHeight = "60px";
+   title.innerHTML = "Register";
+   signupBtn.classList.remove("disable");
+   signinBtn.classList.add("disable");
+}
+
+</script>
+</body>
+</html>
