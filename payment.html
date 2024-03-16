@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lily & Co - Payment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your custom CSS styles for the payment page here */
+        /* For brevity, I'm including only the relevant styles */
+        /* Navigation styles */
+        nav {
+            position: fixed;
+            width: calc(101%);
+            top: 0;
+            z-index: 1000;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            margin-left: -0.5%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #111;
+        }
+
+        /* Brand name styles */
+        .brand-name {
+            font-family: 'Times New Roman', serif;
+            font-size: 150%;
+            color: #333;
+            text-align: left;
+            margin-top: 4%;
+            margin-bottom: -1%;
+            margin-left: 2%;
+        }
+
+        /* Section break styles */
+        .section-break {
+            border-top: 2px solid #333;
+            margin-top: 1.5%;
+        }
+
+        /* Payment Page Styles */
+        .payment-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: -80px;
+        }
+
+        .billing-container {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .payment-form h2,
+        .order-summary h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .payment-form input[type="text"],
+        .payment-form input[type="password"],
+        .payment-form select,
+        .order-summary input[type="text"],
+        .order-summary input[type="password"],
+        .order-summary select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .payment-form label,
+        .order-summary label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .payment-form .form-group,
+        .order-summary .form-group {
+            margin-bottom: 15px;
+        }
+
+        .payment-form input[type="checkbox"],
+        .order-summary input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .order-summary {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .order-summary h2 {
+            margin-top: 0;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .payment-container {
+                flex-direction: column;
+            }
+
+            .billing-container {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .order-summary-container {
+            margin-top: 5%;
+            margin-left: -30%;
+        }
+
+        .icons-container {
+            margin-top: -40px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px; /* Reduced gap */
+        }
+
+        .icons-container img {
+            width: 300px; /* Adjusted width */
+            height: auto; /* Adjusted height */
+            margin: 0 10px; /* Reduced margin */
+            cursor: pointer; /* Added cursor pointer */
+        }
+
+.payment-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px; /* Adjusted padding */
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px; /* Adjusted width */
+    font-size: 14px; /* Adjusted font size */
+}
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="user_registration.html">Register</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+</nav>
+<header>
+    <div class="brand-name">Lily & Co</div>
+    <div class="section-break"></div>
+</header>
+<main>
+    <div class="icons-container">
+        <a href="checkout.html"><img src="shipping_light.jpg" alt="Icon 1"></a> <!-- Added link -->
+        <a href="payment.html"><img src="payment_bold.jpg" alt="Icon 2" style="width: 285px;"></a>
+        <a href="confirmation.html"><img src="confirm_light.jpg" alt="Icon 3" style="width: 400px;margin-bottom:-9px;"> </a>
+    </div>
+    <div class="payment-container">
+        <div class="billing-container">
+            <div class="payment-form">
+                <h2>Billing Information</h2>
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="name-on-card">Name on Card:</label>
+                    <input type="text" id="name-on-card" name="name-on-card" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YYYY" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-zip">Zip Code:</label>
+                    <input type="text" id="billing-zip" name="billing-zip" required>
+                </div>
+            </div>
+            <div class="payment-form">
+                <h2>Billing Address</h2>
+                <div class="form-group">
+                    <label for="street-address">Street Address:</label>
+                    <input type="text" id="street-address" name="street-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-city">City:</label>
+                    <input type="text" id="billing-city" name="billing-city" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-zip">Zip Code:</label>
+                    <input type="text" id="billing-zip" name="billing-zip" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="same-as-shipping" style="display: inline-block; margin-right: 5px;">Same as shipping address</label>
+                    <input type="checkbox" id="same-as-shipping" style="display: inline-block;">
+                    <button onclick="redirectToNext()" type="button">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="order-summary-container">
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <!-- Replace the existing list with the image and totals -->
+                <img src="cart_eg.jpg" alt="Cart Example" style="width: 300px; margin-bottom: 10px;">
+                <p>Total (without tax): $270</p>
+                <!-- Shipping options -->
+                <div class="shipping-options">
+                    <label for="shipping-method">Select Shipping:</label>
+                    <select id="shipping-method">
+                        <option value="express">Express shipping ($20)</option>
+                        <option value="normal">Normal shipping (Free)</option>
+                    </select>
+                </div>
+                <p>Total: $290</p>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <!-- Footer code -->
+</footer>
+<script>
+    function redirectToNext() {
+        // Redirect to the next page
+        window.location.href = "confirmation.html"; // Change to the appropriate page URL
+    }
+</script>
+</body>
+</html>

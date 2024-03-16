@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lily & Co - Confirmation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            position: fixed;
+            width: calc(101%);
+            top: 0;
+            z-index: 1000;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            margin-left: -0.5%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #111;
+        }
+
+        .brand-name {
+            font-family: 'Times New Roman', serif;
+            font-size: 150%;
+            color: #333;
+            text-align: left;
+            margin-top: 4%;
+            margin-bottom: -1%;
+            margin-left: 2%;
+        }
+
+        .section-break {
+            border-top: 2px solid #333;
+            margin-top: 1.5%;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confirmation-text {
+            text-align: center;
+            margin-top: 0px;
+margin-bottom:10px;
+            font-size: 24px;
+        }
+
+        .icons-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .icons-container img {
+            width: 300px;
+            margin-top: -75px;
+            margin-right: 30px;
+            cursor: pointer; /* Add cursor pointer */
+        }
+
+        .confirmation-icon {
+            width: 300px; /* Adjusted size */
+        }
+
+        video::-webkit-media-controls-panel {
+            display: none;
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="user_registration.html">Register</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+</nav>
+<header>
+    <div class="brand-name">Lily & Co</div>
+    <div class="section-break"></div>
+</header>
+<main>
+    <div class="icons-container">
+        <img src="shipping_light.jpg" alt="Shipping Icon" style="margin-bottom: 10px;" onclick="redirectToCheckout()">
+        <img src="payment_light.jpg" alt="Payment Icon" style="margin-bottom:-15px;" onclick="redirectToPayment()">
+        <img src="confirm_bold.jpg" alt="Confirmation Icon" class="confirmation-icon" style="height:auto; width:450px;margin-bottom:-15px;">
+    </div>
+    <div class="video-container">
+        <video width="800" height="500" controls autoplay loop>
+            <source src="confirm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="confirmation-text">
+        Confirmation Number: JKTK14121ZX
+    </div>
+</main>
+<footer>
+    <!-- Footer code -->
+</footer>
+
+<script>
+    function redirectToCheckout() {
+        window.location.href = "checkout.html";
+    }
+
+    function redirectToPayment() {
+        window.location.href = "payment.html";
+    }
+</script>
+
+</body>
+</html>
