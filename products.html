@@ -4,19 +4,283 @@
     <title>Lily & Co</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="products.css">
     <style>
-        
+        body {
+            background-color: #fff;
+            transition: background-color 0.5s ease;
+            margin: 0;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            color: black;
+        }
+
+        .bg-color1 {
+            background-color: #fff;
+        }
+
+        .bg-color2 {
+            background-image: url("product1_bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-color3 {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .content-container {
+            align-items: center;
+        }
+
+        .bg-color3 .text-content {
+            margin-right: 700px;
+        }
+
+        .text-content p {
+            max-width: 100%;
+        }
+
+        .image-content img {
+            width: 400px;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .bg-color4 {
+            background-color: #fff; 
+        }
+
+        .bg-color5 {
+            background-color: #fff;
+        }
+
+        .bg-color5 .text-content {
+            font-size: 28px;
+        }
+
+        .bg-color6 {
+            background-image: url("product3_bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-color7 {
+            background-color: #fff;
+            padding: 20px;
+        }
+	.bg-color7 .text-content {
+            font-size: 28px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 50%;
+            margin-right: 20px;
+        }
+
+        .text-content p {
+            max-width: 100%;
+        }
+
+        .image-content img {
+            width: 300px;
+            height: auto;
+        }
+
+        .bg-color8 {
+            background-color: #ff6347;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            margin-top: -10px;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #111;
+        }
+
+        .brand-name {
+            font-family: "Arial", sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-align: left;
+            margin-top: 40px;
+            margin-bottom: -10px;
+            margin-left: 20px;
+        }
+
+        .section-break {
+            border-top: 2px solid #333;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .fragrances-header {
+            font-size: 70px;
+            text-align: center;
+        }
+
+        .fragrance-images-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .fragrance-image {
+            position: relative;
+            margin: 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .fragrance-image img { 
+            width: 350px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .fragrance-name {
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #fff;
+            border: 2px solid black;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #ddd;
+        }
+
+        .fragrance-image:hover .learn-more-btn {
+            display: none;
+        }
+
+        .learn-more-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .fragrance-image:hover .learn-more-btn {
+            display: block;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .image-content img {
+            width: 250px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .product-icon {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .image-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .serial-number {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            font-weight: bold;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="final.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="#cart">Cart</a></li>
+            <li><a href="cart.html">Cart</a></li>
             <li><a href="user_registration.html">Register</a></li>
-            <li><a href="#checkout">Checkout</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
         </ul>
     </nav>
     <header>
@@ -25,8 +289,8 @@
     </header>
 
     <div class="section bg-color1">
-        <div class="fragrances-header">Our Signature Fragrances</div>
-        <div class="section-break"></div>
+        <div class="fragrances-header" style="margin-top:-245px;">Our Signature Fragrances</div>
+        <p style="text-align: center; margin-top: 20px;max-width:500px;margin-top:-3px;">Escape to a new scent-sation with our fragrances, transporting you to a world of wonder, without leaving your doorstep!</p>
         <div class="fragrance-images-container">
             <div class="fragrance-image">
                 <span class="serial-number">01</span>
@@ -52,20 +316,20 @@
         </div>
     </div>
 
-    <div class="section bg-color2">
-    </div>
+    <div class="section bg-color2"></div>
 
-    <div class="section bg-color3">
-        <div class="content-container">
-            <div class="text-content">
-                <p style="margin-left: 100px;">The essence of luxury! Our fragrance, infused with the intoxicating aroma of blood oranges, is a masterpiece of perfumery. Crafted with the finest essential oils and expertly blended by our skilled artisans, this scent embodies the warmth and vitality of a summer's day. The invigorating citrus freshness of blood oranges harmoniously intertwines with subtle floral and woody notes, creating a harmonious blend that transports you to a sun-kissed paradise. As the scent lingers on your skin, the sweetness of the blood oranges gently whispers memories of languid summer afternoons, invigorating your senses and transporting you to a world of tranquility.</p>
-            </div>    
-            <div class="image-content">
-                <img src="product1_icon1.jpg" alt="Product 1 Icon 1" class="product-icon" style="margin-left: -900px;">
-                <img src="product1_icon3.jpg" alt="Product 1 Icon 3" class="product-icon" style="margin-left: -900px;">
-            </div>
+<div class="section bg-color3">
+    <div class="content-container">
+        <div class="text-content">
+            <p style="margin-left: 100px;">The essence of luxury! Our fragrance, infused with the intoxicating aroma of blood oranges, is a masterpiece of perfumery. Crafted with the finest essential oils and expertly blended by our skilled artisans, this scent embodies the warmth and vitality of a summer's day. The invigorating citrus freshness of blood oranges harmoniously intertwines with subtle floral and woody notes, creating a harmonious blend that transports you to a sun-kissed paradise. As the scent lingers on your skin, the sweetness of the blood oranges gently whispers memories of languid summer afternoons, invigorating your senses and transporting you to a world of tranquility.</p>
+        </div>    
+        <div class="image-content">
+            <img src="product1_icon1.jpg" alt="Product 1 Icon 1" class="product-icon" style="margin-left: -900px; width: 450px;">
+            <img src="product1_icon3.jpg" alt="Product 1 Icon 3" class="product-icon" style="margin-left: -900px; width: 200px;">
         </div>
     </div>
+</div>
+
 
     <div class="section bg-color4">
         <video autoplay loop muted style="width: 100%; height: 100vh; object-fit: cover;">
@@ -94,11 +358,11 @@
     <div class="section bg-color7">
         <div class="content-container">
             <div class="image-content" style="margin-right: 100px;margin-left: 200px;">
-                <img src="product3_icon.jpg" alt="Product 3 Icon" style="width: 250px;">
+                <img src="product3_icon.jpg" alt="Product 3 Icon" style="width: 300px;">
                 <img src="product3_icon2.jpg" alt="Product 3 Icon 2" style="width: 250px;">
             </div>
             <div class="text-content">
-                <p style="">Everlast, the summer fragrance that captures the essence of eternal youth. Just as the warmth of a sun-kissed day seems to stretch on forever, this scent bottles the carefree spirit of summer, when every moment feels like an endless adventure. Its notes of lavender, vanilla, and musk evoke the sweet sensation of freedom and joy, transporting you to a world where time stands still and every day feels like a never-ending celebration of life. Like the radiant glow of a summer sunset, Everlast's allure is both timeless and ageless, inviting you to revel in the beauty and vitality of youth, forever preserved. As the subtle nuances of Everlast unfold, you are enveloped in a world of refinement and beauty, where the passing of time is but a distant memory.</p>
+                <p>Everlast, the summer fragrance that captures the essence of eternal youth. Just as the warmth of a sun-kissed day seems to stretch on forever, this scent bottles the carefree spirit of summer, when every moment feels like an endless adventure. Its notes of lavender, vanilla, and musk evoke the sweet sensation of freedom and joy, transporting you to a world where time stands still and every day feels like a never-ending celebration of life. Like the radiant glow of a summer sunset, Everlast's allure is both timeless and ageless, inviting you to revel in the beauty and vitality of youth, forever preserved. As the subtle nuances of Everlast unfold, you are enveloped in a world of refinement and beauty, where the passing of time is but a distant memory.</p>
             </div>
         </div>
     </div>

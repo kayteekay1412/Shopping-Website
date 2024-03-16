@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lily & Co - Checkout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your custom CSS styles for the checkout page here */
+        /* For brevity, I'm including only the relevant styles */
+
+        /* Navigation styles */
+        nav {
+            position: fixed;
+            width: calc(101%); /* Adjusted width to remove gap */
+            top: 0;
+            z-index: 1000;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            margin-left: -0.5%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            background-color: #111;
+        }
+
+        /* Brand name styles */
+        .brand-name {
+            font-family: 'Times New Roman', serif;
+            font-size: 150%;
+            color: #333;
+            text-align: left;
+            margin-top: 4%;
+            margin-bottom: -1%;
+            margin-left: 2%; /* Adjusted margin to remove gap */
+        }
+
+        /* Section break styles */
+        .section-break {
+            border-top: 2px solid #333;
+            margin-top: 1.5%;
+        }
+
+        /* Checkout Page Styles */
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Add this line */
+        }
+
+        .icons-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .icons-container img {
+            width: 300px; /* Adjusted width */
+            height: auto; /* Adjusted height */
+            margin: 0 20px; /* Increased margin for spacing */
+            cursor: pointer; /* Added cursor pointer */
+        }
+
+        .shipping-address {
+            width: 70%;
+            margin-right: 20px;
+        }
+
+        .order-summary {
+            width: 40%; /* Increase the width to fit the image */
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .order-summary h2 {
+            margin-top: 0;
+        }
+
+        .order-summary ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .order-summary li {
+            margin-bottom: 10px;
+        }
+
+        .checkout-form input[type="text"],
+        .checkout-form input[type="email"],
+        .checkout-form input[type="tel"],
+        .checkout-form select,
+        .checkout-form textarea {
+            padding: 8px; /* Adjusted padding */
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px; /* Adjusted font size */
+            width: auto; /* Adjusted width */
+        }
+
+        .checkout-form input[type="submit"],
+
+
+        /* Add custom style for side-by-side elements */
+        .checkout-form label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .checkout-form .form-group {
+            margin-bottom: 10px;
+            display: flex; /* Add this line */
+            align-items: center; /* Add this line */
+        }
+
+        .checkout-form .form-group label {
+            /* Keep label to the left */
+            margin-right: 10px;
+        }
+
+        .checkout-form .form-group input[type="text"],
+        .checkout-form .form-group input[type="email"],
+        .checkout-form .form-group input[type="tel"] {
+            flex: 1; /* Adjusted width */
+            width: auto;
+        }
+
+        /* Adjusted width for first and last name containers */
+        .name-container {
+            display: flex;
+        }
+
+        .name-container .form-group {
+            margin-right: 10px;
+        }
+
+        /* Styles for the shipping options */
+        .shipping-options {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .shipping-options label {
+            margin-right: 10px;
+        }
+
+        .shipping-options select {
+            padding: 5px; /* Reduced padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 12px; /* Reduced font size */
+            width: 175px; /* Adjusted width */
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .checkout-container {
+                flex-direction: column;
+            }
+
+            .order-summary {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .checkout-form input[type="text"],
+            .checkout-form input[type="email"],
+            .checkout-form input[type="tel"] {
+                width: 100%; /* Full width on small screens */
+            }
+        }
+ .checkout-form input[type="button"] { /* Add this line */
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 12px; /* Adjusted padding */
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100px; /* Adjusted width */
+            font-size: 14px; /* Adjusted font size */
+        }
+        /* Add negative margin to move elements above */
+        main {
+            margin-top: -30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="user_registration.html">Register</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="brand-name">Lily & Co</div>
+        <div class="section-break"></div>
+    </header>
+    <main>
+        <div class="icons-container">
+            <img src="shipping_bold.jpg" alt="Icon 1" onclick="redirectToShipping()">
+            <img src="payment_light.jpg" alt="Icon 2" onclick="redirectToPayment()" style="width: 285px;">
+            <img src="confirm_light.jpg" alt="Icon 3" style="width: 400px; margin-bottom:10px;"> <!-- Increased size -->
+        </div>
+        <div class="checkout-container">
+            <div class="shipping-address" style="margin-top:-20px">
+                <h2>Shipping Address</h2>
+                <p>Please enter your address details to calculate the total with taxes</p> <!-- Added text -->
+                <form class="checkout-form" style="margin-left:-15%;">
+                    <!-- First and Last Name Container -->
+                    <div class="name-container">
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    <!-- End of First and Last Name Container -->
+                    <!-- Other input fields -->
+                    <div class="other-fields">
+                        <div class="form-group">
+                            <label for="street-address">Street Address:</label>
+                            <input type="text" id="street-address" name="street-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip-code">Zip Code:</label>
+                            <input type="text" id="zip-code" name="zip-code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <input type="button" value="Next" onclick="redirectToPayment()">
+                </form>
+            </div>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <!-- Replace the existing list with the image and totals -->
+                <img src="cart_eg.jpg" alt="Cart Example" style="width: 300px; margin-bottom: 10px;">
+                <p>Total (without tax): $270</p>
+                <!-- Shipping options -->
+                <div class="shipping-options">
+                    <label for="shipping-method">Select Shipping:</label>
+                    <select id="shipping-method">
+                        <option value="express">Express shipping ($20)</option>
+                        <option value="standard">Standard shipping (Free)</option>
+                    </select>
+                </div>
+                <p>Total: $370</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Footer code -->
+    </footer>
+    <script>
+        function redirectToPayment() {
+            // Redirect to the payment page
+            window.location.href = "payment.html";
+        }        
+        function redirectToShipping() {
+            // Redirect to the shipping page
+            window.location.href = "checkout.html";
+        }
+    </script>
+</body>
+</html>
